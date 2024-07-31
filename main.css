@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 30px;
+
+}
+
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator{
+    background-color: #483D8B;
+    width: 100%;
+    max-width: 375px ;
+    min-height: 640px ;
+    display: flex ;
+    flex-direction: Column; /* This line is for the buttons to be stacked on eachother*/
+    border-radius: 1.5rem;
+    overflow: hidden;
+
+}
+
+.display{
+    min-height: 200px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-end; /*this is to put the content displayed on the bottom right corner on display*/
+    color: white;
+    text-align: right;
+    flex: 1 1 0%;
+}
+
+.display .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width:100%;
+    max-width: 100%;
+    overflow: auto;
+
+
+}
+
+.display .input{
+    width: 100%
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.display .output{
+    font-size: 2rem;
+    font-weight: 700; /*bold weight*/
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.display .operator{
+    color:#20B2AA;
+
+}
+
+.display .brackets,
+.display .percent{
+    color: #2E8B57;
+}
+
+.keys{
+    background-color: #663399;
+    padding: 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0; /*change in border in the top 2 corners*/
+    display: grid;
+    grid-template-columns: repeat(4,1fr); /*This repeats a grid pattern with the same width one fraction each. having 4 buttons on each column  */
+    grid-template-rows: repeat(5,1fr); 
+    grid-gap: 1rem ;/* spacing between each button*/
+    box-shadow: 0px - 2px 16px rgba(0,0, 0, 0.2);
+}
+
+.keys .key {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+    background-color: #4B0082;
+    border-radius: 1rem; /* makes the button more rounded */
+    transition: 2s; /*Adds some animation when pressing the keys*/
+    user-select: none; /*to stop the user selcting the text, instead the key*/
+}
+
+.keys .key span {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* moves the key data to the centre of the key */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+
+}
+
+.keys .key:hover {
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key.operator span{
+    color:#20B2AA;
+}
+.keys .key.action span{
+        color: #2E8B57;
+
+}
